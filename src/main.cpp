@@ -1,13 +1,13 @@
 #include <iostream>
-#include "FreightWagon.h"
-#include "AbstractWagon.h"
-#include "PassengerWagon.h"
-#include "UtilityWagon.h"
-#include "ElectricLocomotive.h"
-#include "GasolineLocomotive.h"
-#include "Wagons.h"
-#include "AbstractLocomotive.h"
-#include "Train.h"
+#include "Wagon/FreightWagon.hpp"
+#include "Wagon/AWagon.hpp"
+#include "Wagon/PassengerWagon.hpp"
+#include "Wagon/UtilityWagon.hpp"
+#include "Locomotive/ElectricLocomotive.hpp"
+#include "Locomotive/GasolineLocomotive.hpp"
+#include "Locomotive/Wagons.hpp"
+#include "Locomotive/ALocomotive.hpp"
+#include "Train/Train.hpp"
 
 using namespace simasciitrain;
 
@@ -19,9 +19,9 @@ int main() {
     AbstractWagon *utilityWagon = new UtilityWagon();
     std::cout << *utilityWagon << std::endl;            //	[@]
 
-    AbstractLocomotive *electricLocomotive = new ElectricLocomotive();
+    ALocomotive *electricLocomotive = new ElectricLocomotive();
     std::cout << *electricLocomotive << std::endl;        //	[E]>
-    AbstractLocomotive *gasolineLocomotive = new GasolineLocomotive();
+    ALocomotive *gasolineLocomotive = new GasolineLocomotive();
     std::cout << *gasolineLocomotive << std::endl;        //	[G]>
 
     Wagons wagons;
