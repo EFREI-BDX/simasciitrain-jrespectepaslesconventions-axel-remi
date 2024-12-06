@@ -9,13 +9,4 @@ file(GLOB_RECURSE SOURCES
 
 include_directories("include")
 
-add_executable(simasciitrain ${SOURCES}
-        include/Locomotive/ETypeLocomotive.hpp
-        src/Locomotive/ETypeLocomotive.cpp
-        include/Train/ITrain.hpp
-        include/Train/ITrainElement.hpp
-        include/Locomotive/ALocomotive.hpp
-        src/Locomotive/ALocomotive.cpp
-        include/Locomotive/ElectricLocomotive.hpp
-        include/Locomotive/GasolineLocomotive.hpp
-        src/main.cpp)
+add_executable(simasciitrain ${SOURCES})
