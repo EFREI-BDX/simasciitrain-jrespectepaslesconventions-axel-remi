@@ -17,15 +17,7 @@ namespace simasciitrain
 
     private:
         int freightCount_;
-        void print(std::ostream& os) const override
-        {
-            os << "[";
-            for (int i = 0; i < freightCount_; ++i)
-            {
-                os << "#";
-            }
-            os << "]";
-        }
+        void print(std::ostream& os) const override;
     };
 }
 

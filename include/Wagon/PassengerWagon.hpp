@@ -17,14 +17,7 @@ namespace simasciitrain
 
     private:
         int passengerCount_;
-        void print(std::ostream& os) const override
-        {
-            os << "[";
-            for (int i = 0; i < passengerCount_; ++i)
-            {
-                os << "O";
-            }
-            os << "]";
-        }
+        void print(std::ostream& os) const override;
     };
+
 }

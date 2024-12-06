@@ -11,9 +11,7 @@ namespace simasciitrain
         ~UtilityWagon() override = default;
 
     private:
-        void print(std::ostream& os) const override
-        {
-            os << "[@]";
-        }
+
+        void print(std::ostream& os) const override;
     };
 }
