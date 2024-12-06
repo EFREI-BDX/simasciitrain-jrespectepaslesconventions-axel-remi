@@ -4,13 +4,15 @@
 
 namespace simasciitrain
 {
-    class UtilityWagon : public AWagon {
+    class UtilityWagon : public AWagon
+    {
     public:
         UtilityWagon() : AWagon(ETypeWagon::UTILITY) {}
         ~UtilityWagon() override = default;
 
     private:
-        void print(std::ostream& os) const override {
+        void print(std::ostream& os) const override
+        {
             os << "[@]";
         }
     };

@@ -4,7 +4,8 @@
 
 namespace simasciitrain
 {
-    class ETypeWagon {
+    class ETypeWagon
+    {
     public:
         static const ETypeWagon PASSENGER;
         static const ETypeWagon FREIGHT;
