@@ -15,10 +15,10 @@ namespace simasciitrain
 
         [[nodiscard]] char getSymbol() const override;
         [[nodiscard]] std::string getType() const override;
-        void print(std::ostream& os) const override;
 
     private:
         const ETypeLocomotive *typeLocomotive_;
+        void print(std::ostream& os) const override;
     };
 
 }
