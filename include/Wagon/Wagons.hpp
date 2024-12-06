@@ -1,28 +1,37 @@
-//
-// Created by axelj on 06/12/2024.
-//
+#pragma once
 
-#ifndef WAGONS_HPP
-#define WAGONS_HPP
-
-#include "Wagon/AWagon.hpp"
 #include <vector>
 #include <ostream>
+#include "AWagon.hpp"  // Assurez-vous que ce fichier est inclus. AbstractWagon hérite de ITrainElement.
 
-namespace simasciitrain {
-    class Wagons {
-    private:
-        std::vector<AbstractWagon*> wagons_;
-
+namespace simasciitrain
+{
+    class Wagons
+    {
     public:
-        Wagons();
+        Wagons() = default;
 
-        ~Wagons();
+        ~Wagons() {
+        }
 
-        Wagons* addWagon(AbstractWagon* wagon);
+        Wagons *addWagon(AWagon* wagon) {
+            wagons_.push_back(wagon);
+            return this;
+        }
 
-        friend std::ostream& operator<<(std::ostream& os, const Wagons& wagons);
+        friend std::ostream& operator<<(std::ostream& os, const Wagons& wagons) {
+            for (size_t i = 0; i < wagons.wagons_.size(); ++i) {
+                if (wagons.wagons_[i]) {
+                    os << *(wagons.wagons_[i]);
+                    if (i < wagons.wagons_.size() - 1) {
+                        os << "-";
+                    }
+                }
+            }
+            return os;
+        }
+
+    private:
+        std::vector<AWagon*> wagons_;
     };
 }
-
-#endif // WAGONS_HPP

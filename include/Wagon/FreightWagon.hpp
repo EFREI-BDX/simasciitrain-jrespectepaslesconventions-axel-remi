@@ -1,22 +1,30 @@
-//
-// Created by axelj on 06/12/2024.
-//
-
-#ifndef FREIGHTWAGON_HPP
-#define FREIGHTWAGON_HPP
+#pragma once
 
 #include "AWagon.hpp"
+#include "ETypeWagon.hpp"
 
-namespace simasciitrain {
-    class FreightWagon : public AbstractWagon {
+namespace simasciitrain
+{
+    class FreightWagon : public AWagon
+    {
+    public:
+        FreightWagon(int freightCount = 0)
+            : AWagon(ETypeWagon::FREIGHT), freightCount_(freightCount) {}
+        ~FreightWagon() override = default;
+
+        int getFreightCount() const { return freightCount_; }
+        void setFreightCount(int count) { freightCount_ = count; }
+
+        void print(std::ostream& os) const override {
+            os << "[";
+            for (int i = 0; i < freightCount_; ++i) {
+                os << "#";
+            }
+            os << "]";
+        }
+
     private:
         int freightCount_;
-
-    public:
-        explicit FreightWagon(int freightCount);
-        int getFreightCount() const;
-        void setFreightCount(int freightCount);
-        void print(std::ostream& os) const override;
     };
 }
-#endif // FREIGHTWAGON_HPP
+

@@ -13,12 +13,9 @@ namespace simasciitrain
         Train(Wagons* wagons, ALocomotive* locomotive)
             : wagons_(wagons), locomotive_(locomotive) {}
 
-        ~Train() override
-        {
-            delete wagons_;
-            delete locomotive_;
-        }
+        ~Train() override = default;
 
+    protected:
         void print(std::ostream& os) const override
         {
             if (wagons_)
@@ -34,7 +31,6 @@ namespace simasciitrain
                 os << *locomotive_;
             }
         }
-
     private:
         Wagons* wagons_;
         ALocomotive* locomotive_{};

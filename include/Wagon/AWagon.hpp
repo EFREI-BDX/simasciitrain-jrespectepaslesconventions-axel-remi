@@ -1,32 +1,31 @@
-//
-// Created by axelj on 06/12/2024.
-//
+#pragma once
 
-#ifndef ABSTRACTWAGON_H
-#define ABSTRACTWAGON_H
+#include "Train/ITrainElement.hpp"
+#include "Wagon/ETypeWagon.hpp"
 
-#include <string>
-#include <iostream>
-#include "TypeWagon.hpp"
-
-
-namespace simasciitrain {
-    class AbstractWagon {
-
-    private:
-        const TypeWagon *typeWagon;
-
+namespace simasciitrain
+{
+    class AWagon : public ITrainElement
+    {
     public:
-        explicit AbstractWagon(const TypeWagon *typeWagon);
+        AWagon(const ETypeWagon& type) : typeWagon_(&type) {}
+        virtual ~AWagon() = default;
 
-        virtual ~AbstractWagon() = default;
+        [[nodiscard]] char getSymbol() const override {
+            return typeWagon_ ? typeWagon_->getSymbol() : '?';
+        }
 
-        virtual void print(std::ostream &os) const = 0;
+        [[nodiscard]] std::string getType() const override {
+            return typeWagon_ ? typeWagon_->getName() : "Unknown Wagon";
+        }
 
-        [[nodiscard]] char getSymbol() const;
-        [[nodiscard]] std::string getType() const;
+        // Par défaut, la méthode print n'affiche rien de spécifique,
+        // elle sera redéfinie dans les classes concrètes.
+        void print(std::ostream& os) const override {
+            os << "[ ]";
+        }
+
+    protected:
+        const ETypeWagon* typeWagon_{};
     };
-
 }
-#endif // ABSTRACTWAGON_H
-

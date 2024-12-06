@@ -1,6 +1,0 @@
-# ninja log v6
-1	305	7551966912663193	build.ninja	edd1e4d6578396bb
-16	327	7551966914241528	CMakeFiles/simasciitrain.dir/src/Locomotive/ETypeLocomotive.cpp.obj	6564feacfda4a383
-14	309	7551967383460223	CMakeFiles/simasciitrain.dir/src/Wagon/TypeWagon.cpp.obj	812a163059003af4
-8	356	7551967383390201	CMakeFiles/simasciitrain.dir/src/Wagon/AWagon.cpp.obj	fb9c764851e5759a
-11	366	7551967383430198	CMakeFiles/simasciitrain.dir/src/Wagon/FreightWagon.cpp.obj	82ab3ca31692e983

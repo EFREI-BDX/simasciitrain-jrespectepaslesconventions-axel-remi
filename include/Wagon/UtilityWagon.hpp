@@ -1,21 +1,16 @@
-//
-// Created by axelj on 06/12/2024.
-//
+#pragma once
 
-#ifndef UTILITYWAGON_HPP
-#define UTILITYWAGON_HPP
+#include "AWagon.hpp"
 
-#include "Wagon/AWagon.hpp"
-
-namespace simasciitrain {
-    class UtilityWagon : public AbstractWagon {
+namespace simasciitrain
+{
+    class UtilityWagon : public AWagon {
     public:
-        // Constructeur
-        UtilityWagon();
+        UtilityWagon() : AWagon(ETypeWagon::UTILITY) {}
+        ~UtilityWagon() override = default;
 
-        // Méthode pour afficher les informations du wagon
-        void print(std::ostream& os) const override;
+        void print(std::ostream& os) const override {
+            os << "[@]";
+        }
     };
 }
-
-#endif // UTILITYWAGON_HPP

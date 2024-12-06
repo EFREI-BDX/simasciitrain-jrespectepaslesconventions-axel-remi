@@ -5,18 +5,18 @@
 #include "Wagon/UtilityWagon.hpp"
 #include "Locomotive/ElectricLocomotive.hpp"
 #include "Locomotive/GasolineLocomotive.hpp"
-#include "Locomotive/Wagons.hpp"
+#include "Wagon/Wagons.hpp"
 #include "Locomotive/ALocomotive.hpp"
 #include "Train/Train.hpp"
 
 using namespace simasciitrain;
 
 int main() {
-    AbstractWagon *freightWagon = new FreightWagon(5);
+    AWagon *freightWagon = new FreightWagon(5);
     std::cout << *freightWagon << std::endl;            //	[#####]
-    AbstractWagon *passengerWagon = new PassengerWagon(5);
+    AWagon *passengerWagon = new PassengerWagon(5);
     std::cout << *passengerWagon << std::endl;          //	[OOOOO]
-    AbstractWagon *utilityWagon = new UtilityWagon();
+    AWagon *utilityWagon = new UtilityWagon();
     std::cout << *utilityWagon << std::endl;            //	[@]
 
     ALocomotive *electricLocomotive = new ElectricLocomotive();
