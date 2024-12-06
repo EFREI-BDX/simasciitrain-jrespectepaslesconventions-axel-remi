@@ -15,6 +15,8 @@ namespace simasciitrain
         int getFreightCount() const { return freightCount_; }
         void setFreightCount(int count) { freightCount_ = count; }
 
+    private:
+        int freightCount_;
         void print(std::ostream& os) const override {
             os << "[";
             for (int i = 0; i < freightCount_; ++i) {
@@ -22,9 +24,6 @@ namespace simasciitrain
             }
             os << "]";
         }
-
-    private:
-        int freightCount_;
     };
 }
 

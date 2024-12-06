@@ -15,6 +15,8 @@ namespace simasciitrain
         int getPassengerCount() const { return passengerCount_; }
         void setPassengerCount(int count) { passengerCount_ = count; }
 
+    private:
+        int passengerCount_;
         void print(std::ostream& os) const override {
             os << "[";
             for (int i = 0; i < passengerCount_; ++i) {
@@ -22,7 +24,5 @@ namespace simasciitrain
             }
             os << "]";
         }
-    private:
-        int passengerCount_;
     };
 }
